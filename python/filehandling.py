@@ -36,3 +36,35 @@ with open("kavinya.txt",'w') as file:
 
 with open("kavinya.txt",'r') as file:
     print(file.read())
+
+
+def sample(func):
+    def wrapper(self):
+        print("I am Decorator")
+        func(self)
+    return wrapper
+
+class Test:
+    @sample
+    def home(self):
+        print("Hi")
+
+t=Test()
+t.home()
+
+def sample(func):
+    # This wrapper accepts 'self' and any other arguments
+    def wrapper(*args, **kwargs):
+        func(*args, **kwargs)  # Executes t.home()
+        print("I am Decorator")
+    return wrapper  # Must return the wrapper function
+
+
+class Test:
+    @sample
+    def home(self):
+        print("Hi")
+
+
+t = Test()
+t.home()
