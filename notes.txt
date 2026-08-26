@@ -1,0 +1,2 @@
+python -m venv env_folder_name
+env_folder_name\Scripts\activate
