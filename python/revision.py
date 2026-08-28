@@ -48,4 +48,23 @@ try:
 except Exception as e:
     print(e)
 
-     
+
+
+# oops:
+
+class Test:
+    name="Babuji"
+    city="Chennai"
+
+print(Test.name)
+print(Test.city)
+setattr(Test,'qualification','BCA')
+print(Test.qualification)
+city=getattr(Test,'city')
+print(city)
+delattr(Test,'city')
+# print(Test.city)
+
+
+obj=Test()
+print("Object=> Name",obj.name)
