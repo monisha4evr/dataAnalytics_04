@@ -1,0 +1,128 @@
+Section A – Basic & Conceptual
+
+10 × 1 = 10 Marks
+
+1. Which Pandas function is used to read a CSV file?
+2. What is the difference between loc and iloc?
+3. Which function is used to check the first 5 rows of a DataFrame?
+4. How do you check the number of rows and columns in a DataFrame?
+5. Which function is used to find missing values in a DataFrame?
+6. What is the purpose of dropna()?
+7. What is the purpose of fillna()?
+8. Which Pandas function is used to remove duplicate rows?
+9. What does groupby() do in Pandas?
+10. Which function is used to sort a DataFrame based on a column?
+
+Section B – Practical Coding
+8 × 3 = 24 Marks
+Assume the company has the following DataFrame:
+import pandas as pd
+
+data = {
+    "Order_ID": [101, 102, 103, 104, 105, 106],
+    "Customer": ["Arun", "Priya", "Kumar", "Divya", "Arun", "Priya"],
+    "Product": ["Laptop", "Mouse", "Keyboard", "Laptop", "Mouse", "Laptop"],
+    "Category": ["Electronics", "Accessories", "Accessories",
+                 "Electronics", "Accessories", "Electronics"],
+    "Quantity": [1, 2, 1, 2, 3, 1],
+    "Price": [50000, 800, 1500, 50000, 800, 50000],
+    "City": ["Chennai", "Chennai", "Bangalore", "Chennai",
+             "Bangalore", "Chennai"]
+}
+
+df = pd.DataFrame(data)
+
+
+Questions
+1. Display only the Customer, Product, and Price columns.
+2. Find all orders where the Price is greater than 1000.
+3. Create a new column called Total_Amount.
+Formula: Total_Amount = Quantity × Price
+4. Find the total sales amount of the company.
+5. Find the average product price.
+6. Find the number of orders placed by each customer.
+7. Find the total sales amount for each city.
+8. Sort the DataFrame by Total_Amount from highest to lowest.
+
+Section C – Real Company Scenario
+4 × 4 = 16 Marks
+19. Missing Data Scenario – 4 Marks
+
+You are working with a customer dataset:
+data = {
+    "Customer_ID": [1, 2, 3, 4, 5],
+    "Name": ["Arun", "Priya", "Kumar", None, "Divya"],
+    "Age": [25, None, 30, 28, None],
+    "City": ["Chennai", "Chennai", None, "Bangalore", "Chennai"],
+    "Salary": [30000, 40000, None, 50000, 45000]
+}
+
+df = pd.DataFrame(data)
+As a Data Analyst:
+
+Find the missing values.
+Find the total number of missing values in each column.
+Fill missing Age values with the average age.
+Remove rows where Name is missing.
+
+
+20. Sales Analysis – 4 Marks
+
+A company wants to know which product category generates more revenue.
+
+You have:
+data = {
+    "Product": ["Laptop", "Mouse", "Laptop", "Keyboard", "Mouse", "Laptop"],
+    "Category": ["Electronics", "Accessories", "Electronics",
+                 "Accessories", "Accessories", "Electronics"],
+    "Quantity": [2, 5, 1, 3, 4, 2],
+    "Price": [50000, 800, 50000, 1500, 800, 50000]
+}
+
+df = pd.DataFrame(data)
+Write Pandas code to:
+
+Create Total_Sales.
+Find total sales for each category.
+Find the category with the highest sales.
+
+21. Employee Performance – 4 Marks
+
+HR team gives you this data:
+data = {
+    "Employee": ["Arun", "Priya", "Kumar", "Divya", "Rahul"],
+    "Department": ["IT", "HR", "IT", "Finance", "IT"],
+    "Experience": [3, 5, 2, 6, 4],
+    "Salary": [50000, 60000, 45000, 70000, 55000],
+    "Performance": [85, 90, 70, 95, 80]
+}
+
+df = pd.DataFrame(data)
+Write Pandas code to:
+
+Find employees whose performance is greater than 80.
+Find the average salary of each department.
+Find the employee with the highest performance.
+Sort employees based on performance.
+
+22. Business Decision Scenario – 4 Marks
+
+You receive an order dataset with these columns:
+Order_ID
+Customer_ID
+Product
+Quantity
+Price
+Order_Date
+Status
+
+
+The manager asks you:
+"I want to know the monthly sales performance and identify which products are performing poorly."
+
+Write Pandas code/steps to:
+
+Convert Order_Date into datetime.
+Create a Total_Sales column.
+Find monthly sales.
+Find products with low total sales.
