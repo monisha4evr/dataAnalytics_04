@@ -1,0 +1,68 @@
+-- syntax: 
+-- INSERT INTO TABLENAME (column) VALUES ()
+
+insert into samp values ('ss01','Kavinya',8908908909);
+
+insert into samp values ('ss02','Ben',8908908909),
+('ss03','Ben',8908908909),('ss04','Ben',8908908909);
+
+insert into samp (id,name) values ('ss05','Benstein');
+
+Syntax: 
+SELECT * FROM TABLENAME;
+SELECT * FROM public.samp;
+select name,mobile from "samp" where id=2;
+
+create table sampl 
+(id varchar(250),
+name varchar(250),
+mobile varchar(20),
+status int,
+created_at timestamp
+);
+
+
+crud: 
+c - create 
+r - read 
+u- update 
+d- delete 
+
+
+create database da_name 
+create schema schma_name
+
+
+select * from samp;
+
+select * from samp where id='ss01';
+
+syntax: 
+
+update tablename set column=value where condit
+
+update samp set mobile='980876931' where id='ss02' and name='Ben';
+
+delete from tablename where condi 
+
+delete from samp where id='ss04';
+
+
+select * from samp where id='ss03' or name='Ben';
+
+select * from samp;
+
+
+not 
+select * from samp where name !='Benstein';
+select * from samp where not name='Benstein';
+
+select * from customers limit 10 offset 1;
+
+select * from customers where customer_id in (2,5,7,10,30);
+select * from customers where customer_id between 1 and 5 order by customer_id desc;
+-- wildcard  * %,_
+select * from customers where city like '%bad';
+select * from customers where city like 'Hy%bad';
+select * from customers where city like 'Hy%';
+select * from customers where city ilike 'hy%';

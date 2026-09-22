@@ -1,0 +1,54 @@
+Step 8: Data Manipulation - Text Functions
+-- 1. Concatenation 
+select concat('hello',' ','postgress',' examples');
+select name, concat(name,' (',city,')') from students;
+-- 2. concatenation with seperator 
+select concat_ws('-',name,city,area) from students; -- accept null
+-- 3 . format string
+select format('Infromation: %s %s %s %I',name,city,area,coalesce(age,0)) from students; -- not accept null
+-- 4. To char 
+select * from students;
+select to_char(joined,'yyyy-mm-dd') from students;
+select to_char(joined,'yy-mm-dd') from students;
+select to_char(joined,'yy/mm/dd') from students;
+select to_char(joined,'dd/MM/yyy') from students;
+select to_char(age,'99')from students;
+select to_char(age,'99.9')from students; -- convert to another data type too eg: int to float
+
+-- 5. Upper/lower 
+select name,lower(name),upper(name) from students;
+select name,city from students where lower(city)='panruti'; -- dont do with heavy data spoil indexing
+-- 6. split specific part of the string
+-- substring(column,start_position,total_string_count)
+select id,substring(id,1,2),substring(id,3,4),substring(id,3) from students; 
+select city from students;
+-- last 3 character 
+select city,substring(city,length(city)-5) from students;
+-- 7. Position of the string  (pattern match)
+select id,position('S'in id) from students;
+select id,substring(id,position('S'in id)) from students;
+--7.a. strpos()
+select id,strpos(id,'S') from students;
+-- 8. length
+select city, length(city) from students;
+select name,length(name) from students order by name;
+--9. TRIM 
+select name,ltrim(name),rtrim(name),trim(name) from students order by name;
+-- 10.padding - to append a fixed number of characters 
+select id from students;
+select id,lpad(id,'10','0'),rpad(id,'10','*') from students;
+-- 11.Replace - to replace string
+select city,replace(city,'Pondicherry','Puthucheri') from students;
+select id from students;
+-- 12.Overlay replace a part of string from-> starting position for count of number to replace
+select id,overlay(id placing '2024' from 1 for 2) from students; 
+-- 13. Reverse 
+select city,reverse(city) from students;
+-- 14. initcap - capitalize 
+select area,initcap(area) from students;
+-- 15. left/right extract prefix / suffix 
+select id,left(id,2),right(id,3) from students; -- cant do middle (use substring for this option)
+-- 16. split - based on specific pattern 
+select id,split_part(id,'S',1) from students;
+select id,split_part(id,'S',2) from students;
+select area,split_part(area,' ',1) from students;

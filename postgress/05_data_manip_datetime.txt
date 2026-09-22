@@ -1,0 +1,56 @@
+---------------------------------------------
+Time 
+-- data time function
+-- 1. getting current date 
+select current_date;
+select current_time;
+select current_timestamp;
+-- 2. Intervals
+select current_date as today,current_Date-interval '5 days' as int_day;
+select current_date as today,current_Date-interval '5 months' as int_month;
+select current_date as today,current_Date-interval '3 years' as int_year;
+-- 3. extract 
+select Current_date as today,
+extract(day from Current_date) as day,
+extract(month from Current_date) as month,
+extract(year from Current_date) as year,
+extract(minute from Current_timestamp) as minutes,
+extract(Hours from Current_timestamp) as hrs,
+extract(seconds from Current_timestamp) as seconds,
+extract(timezone from Current_timestamp) as timesamp,
+extract(week from Current_timestamp) as week,
+extract(quarter from Current_timestamp) as quatr
+
+;
+select floor(extract(timezone from Current_timestamp)/3600) as hours,
+extract(timezone from Current_timestamp)%3600/60 as minutes;
+-- Extracting quarter for Indian Financial System
+select current_timestamp,
+extract(Quarter from current_timestamp - interval '3 months');
+select current_timestamp,
+extract(Quarter from '2024-04-01'::date - interval '3 months'),
+extract(Quarter from '2024-07-01'::date - interval '3 months'),
+extract(Quarter from '2024-10-01'::date - interval '3 months');
+
+-- date part
+select 
+date_part('day',current_timestamp) as day,
+date_part('months',current_timestamp) as months; -- do all operation like extract
+-- convert to datetime
+select '1990-05-15' , 
+'1990-05-15'::timestamp,
+to_date('31-01-2024','dd-mm-yyyy'),
+to_timestamp('31-01-2024 10:25','dd-mm-yyyy HH:mi'),
+cast( '1990-05-15' as date); -- ISO std datetime format yyyy-mm-dd hh:mi;ss
+
+
+-- first date
+select current_date,
+date_trunc('month',current_date) as current_month,
+date_trunc('year',current_date) as first_year;
+
+-- last date 
+select current_date,
+date_trunc('week',current_date + interval '1 week') - interval '1 second' as last_date,
+date_trunc('month',current_date + interval '1 month') - interval '1 second' as last_month,
+date_trunc('year',current_date + interval '1 year') - interval '1 second' as last_year;

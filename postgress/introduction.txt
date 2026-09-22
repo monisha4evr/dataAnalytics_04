@@ -1,0 +1,86 @@
+Database: 
+     organinzed collection of data  stored Electronically,
+     so that we can access, managed and updated.
+
+
+DBMS: 
+    Database management system:
+    - software  that used to create, update, insert , delete the data.. 
+
+
+        DBMS 
+
+        1. RDBMS (Relational Database Management System)
+        2. Nosql 
+
+
+database  ---->> data --> sql
+sql => Structured Query Language => language used to connect with  Database
+
+SQL basic commands:
+DDL  - Data Definition Language
+DML  - Data Manipulation Language
+DQL  - Data Query Language 
+DCL  - Data Control Language
+TCL  - Transaction Control Language
+
+DDL  - Data Definition Language
+ DDL is used to create/change the structure of the database Object 
+
+Main Commands
+ CREATE 
+ Alter 
+ Drop 
+ Truncate
+
+To create Database:
+    create database databasename
+    create table table_name ( column_name datatype);
+
+Alter : 
+    Add 
+    modify
+    rename
+    drop
+
+
+ADD: 
+
+Alter table Table_name  ADD column_name datatype;
+eg: alter table students add city varchar(5);
+
+Modify:
+alter table tablename modify column_name datatype;
+
+Rename: 
+
+alter table tablename RENAME COLUMN col_name to new_column_name 
+
+DROP : 
+alter table tablename DROP COLUMN col_name;
+
+
+
+
+
+datatype :
+
+int 
+decimal 
+char -> based on  static 
+varchar ->based on content - dynamic
+
+char(7)
+
+apple
+
+varchar (7)
+
+
+text -> maximum
+
+
+
+
+
+

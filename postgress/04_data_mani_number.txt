@@ -1,0 +1,30 @@
+Data Manipulation - Numerical Functions
+-- Calculation 
+select 100+10+20 as total;
+select 100-30 as sub;
+select 100*2 as mul;
+select 10/3 as div,10.0/3 as divde;
+select 10.0/3 as deci_vale,round(10.0/3,2)as rnded;
+select ceil(5.5),ceil(5.4),floor(5.6),floor(5.4);
+select pow(5,2),pow(5,3);
+select sqrt(25);
+select 5,log(5);
+-- trignamatory
+select 90,radians(90),sin(radians(90)),cos(radians(90)); -- round is not works at combination
+select 90,radians(90),cos(radians(90)),round(cast(cos(radians(90)) as numeric),2);
+-- alternate to round => casting convert one datatype to another datatype
+select '5' ,cast('5' as int), cast('5' as decimal),cast ('5.7' as numeric);
+select '5'+5;
+select '5'+10.5;
+--select '5.0'*10; invalid input syntax for type integer: "5.0"
+select 5.0*5;
+
+select * from productsales;
+select *,quantity*(unitprice-discount)+shippingfee as totalprice from productsales;
+find total tax(18%), find totalprice with tax
+
+SELECT 
+    price AS base_price,
+    ROUND(price * 0.18, 2) AS total_tax,
+    ROUND(price * 1.18, 2) AS total_price_with_tax
+FROM orders;
