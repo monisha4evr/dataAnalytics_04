@@ -1,0 +1,40 @@
+20 SQL Questions — JOIN + GROUP BY + HAVING + ORDER BY + FILTER + AGGREGATE
+Display the student name, course name, and paid amount by joining students and payments.
+
+Display student name, city, course, and paid amount for all students who have made payments.
+
+Display student name, course name, course fee, and paid amount by joining all three tables.
+
+Find the total amount paid by each student. Display student name and total paid amount.
+
+Find the number of payments made by each student. Display student name and payment count.
+
+Find the average payment amount for each course.
+
+Display each course name and total amount collected from that course.
+
+Find the highest payment made by each student.
+
+Find the lowest payment made for each course.
+
+Display the student name and total amount paid, only for students whose total payment is greater than 50,000.
+
+Find courses where the total collected payment is greater than 1,00,000.
+
+Find students who have made more than 2 payment transactions.
+
+Display all students from Chennai along with their course name and paid amount.
+
+Display payments where the paid amount is greater than 10,000, along with student name and course name.
+
+Display the total payment collected for each city. Sort the result from highest to lowest total payment.
+
+Find the number of students enrolled in each course. Sort by student count in descending order.
+
+Find the courses where the average payment is greater than 20,000.
+
+Display the top 5 students based on total amount paid.
+
+Display course name, course fee, total collected amount, and sort the courses based on total collected amount from highest to lowest.
+
+Find the students whose total paid amount is less than the course fee. Display student name, course name, course fee, and total paid amount.

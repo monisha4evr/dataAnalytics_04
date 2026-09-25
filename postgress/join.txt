@@ -1,0 +1,81 @@
+Join 
+
+select * from students;
+select * from payments;
+select name,paid
+from students,payments;
+
+
+Cartesian Join
+-- 1. cartesian table
+-- method 1
+select name,course,paid from students,payments;
+select * from students,courses; -- no eror 
+select name from students,courses; -- column reference "name" is ambiguous
+select students.name as student,courses.name as course from students,courses;
+
+select s.name as student,c.name course
+from students s,courses c;
+-- method 2
+select s.name as student,c.name course
+from students as s
+cross join courses as c
+
+
+-- Inner Join.
+
+-- List out the students name who paid more than 10000 in a single transaction
+select student,paid from payments where paid >15000;
+select s.name,p.paid
+from students s
+inner join payments p
+on s.id = p.student
+where paid >15000
+
+Q1. List out the course and the payments
+
+
+-- Left join 
+list out student names and their payment transaction 
+
+select name from students;
+
+-- Left join 
+select s.name,p.*
+from students s
+left join payments p 
+on s.id = p.student
+
+-- right join : 
+-- map the students names with payment transaction 
+
+select s.name,p.*
+from students s
+right join payments p 
+on s.id = p.student
+
+-- full join
+
+select s.name,p.*
+from students s
+full join payments p 
+on s.id = p.student
+
+-- self Join 
+
+list out managers name and their team members name (use hrdata table)
+select * from hrdata; 
+
+-- GET manager id and their team member 
+
+select manager_id,first_name as team_member 
+from hrdata 
+order by manger_id 
+
+-- to get manager name 
+
+select h1.manager_id,h2.first_name as manager,h1.first_name as team_member 
+from hrdata h1 
+join hrdata h2 
+on h1.manager_id = h2.employee_id 
+order by manger_id 

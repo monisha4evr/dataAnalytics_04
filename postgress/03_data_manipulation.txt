@@ -21,6 +21,7 @@ select name,city from students where lower(city)='panruti'; -- dont do with heav
 -- 6. split specific part of the string
 -- substring(column,start_position,total_string_count)
 select id,substring(id,1,2),substring(id,3,4),substring(id,3) from students; 
+select substring(to_char(joined,'yyyy-mm-dd'),1,4) from students;
 select city from students;
 -- last 3 character 
 select city,substring(city,length(city)-5) from students;

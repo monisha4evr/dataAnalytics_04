@@ -66,3 +66,15 @@ select * from customers where city like '%bad';
 select * from customers where city like 'Hy%bad';
 select * from customers where city like 'Hy%';
 select * from customers where city ilike 'hy%';
+
+
+                 SUBQUERY
+                     │
+        ┌────────────┴────────────┐
+        ↓                         ↓
+   Result Based              Execution Based
+        │                         │
+    ┌────┼────┐              ┌────┴────┐
+    ↓    ↓    ↓              ↓         ↓
+ Single Multi Multi          Non-      Correlated
+ Row     Row  Column      Correlated

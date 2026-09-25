@@ -1,0 +1,17 @@
+-- Aggregate Function
+select * from students;
+
+select max(age),min(age) from students;
+select sum(age) from students;
+
+select count(id) ,count(age),count(distinct city) from students;
+select distinct(city) from students;
+
+-- group by 
+select city,count(id),max(age),min(age) from students group by city;
+
+select city,count(city) tot_city from students group by city;
+select city,count(city) tot_city from students where age>=20 group by city;
+select city,count(city) tot_city from students group by city having count(city)>5;
+select city,count(city) tot_city from students where age>=20 
+group by city having count(city)>5 ;
